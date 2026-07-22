@@ -39,10 +39,11 @@ searchInput.addEventListener('keypress', function(e) {
 //     console.log(`Debug>Search: ${query}`); //for UI testing only
 // }
 
-const BASE_URL = "liangkr-uscities-microservices-beghadaqaabjgzd7.northcentralus-01.azurewebsites.net";
+const BASE_URL = "https://liangkr-uscities-microservices-beghadaqaabjgzd7.northcentralus-01.azurewebsites.net";
 async function search() {
     const query = searchInput.value.trim();
-    if (!query) return; // AC9: empty/whitespace-only queries never reach fetch() console. log ("Debug>query: ${query) ); //for UI testing only
+    if (!query) return; // AC9: empty/whitespace-only queries never reach fetch()
+    console.log (`Debug>query: ${query}`); //for UI testing only
     try {
         const response = await fetch(`$(BASE_URL)/uscities-search/${encodeURIComponent(query)}`);
         if (!response.ok) {
