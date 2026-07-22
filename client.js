@@ -45,7 +45,7 @@ async function search() {
     if (!query) return; // AC9: empty/whitespace-only queries never reach fetch()
     console.log (`Debug>query: ${query}`); //for UI testing only
     try {
-        const response = await fetch(`$(BASE_URL)/uscities-search/${encodeURIComponent(query)}`);
+        const response = await fetch(`${BASE_URL}/uscities-search/${encodeURIComponent(query)}`);
         if (!response.ok) {
             throw new Error (`Unexpected status ${response.status}`); // AC4/AC11: fail safely, not open
         }
