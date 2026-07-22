@@ -86,3 +86,11 @@ function json2htmltable(data) {
     }).join('');
     return "<table><tr><th>City</th><th>State</th><th>Zips</th></tr>" + rows + "</table>";
 }
+
+//Instant Ajax Request - fires on every keyup, not just Enter
+searchInput.addEventListener('keyup', function(event) {
+    search();
+    if (event.key === 'Enter') {
+        searchInput.value = ''; //clear the field after an Enter search
+    }
+})
